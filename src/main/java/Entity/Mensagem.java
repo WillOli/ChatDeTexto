@@ -1,8 +1,11 @@
 package Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_mensagem")
@@ -15,6 +18,22 @@ public class Mensagem {
     private long id;
     private String texto;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "chat_id")
+    private Chat chat;  // Change the type from char to Chat
 
+    public void setChat(Chat chat) {
+        this.chat = chat;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }
+
+

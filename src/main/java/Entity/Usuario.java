@@ -8,8 +8,8 @@ import lombok.Setter;
 import java.util.List;
 @Entity
 @Table(name = "tb_usuario")
-@Setter
 @Getter
+@Setter
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +22,6 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     @JsonIgnore
-    private List<Mensagem> mensagems;
+    private List<Mensagem> mensagens;  // Change typo "mensagems" -> "mensagens"
 }
+
