@@ -22,6 +22,6 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     @JsonIgnore
-    private List<Mensagem> mensagens;  // Change typo "mensagems" -> "mensagens"
+    private List<Mensagem> mensagens;
 }
 

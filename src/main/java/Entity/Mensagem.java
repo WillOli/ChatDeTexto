@@ -25,15 +25,8 @@ public class Mensagem {
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "chat_id")
-    private Chat chat;  // Change the type from char to Chat
+    private Chat chat;
 
-    public void setChat(Chat chat) {
-        this.chat = chat;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 }
 
 

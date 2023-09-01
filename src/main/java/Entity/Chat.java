@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+// Classe de entidade Chat
 @Entity
 @Table(name = "tb_chat")
 @Getter
@@ -24,11 +25,7 @@ public class Chat {
 
     @OneToMany(mappedBy = "chat")
     private List<Mensagem> mensagens;
-
-    // Correção aqui
-    public void setUsuarios(List<Usuario> listUser) {
-        this.usuarios = listUser;
-    }
 }
+
 
 
